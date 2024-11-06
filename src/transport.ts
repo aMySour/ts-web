@@ -8,7 +8,7 @@ enum Events {
 
 interface EventParams {
     [Events.Ready]: [void];
-    [Events.Message]: [message: any];
+    [Events.Message]: [event: string, data: object];
     [Events.Closed]: [void];
 };
 
