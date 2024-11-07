@@ -14,6 +14,13 @@ transport.once(Events.Ready, () => {
     transport.sendUnreliable('example_unreliable', {
         imDatagramed: 456,
     });
+
+    setInterval(() => {
+        transport.sendUnreliable('client', {
+            random: Math.random(),
+        });
+    }, 1000 / 60);
+
 });
 
 transport.on(Events.Message, (event, data) => {
